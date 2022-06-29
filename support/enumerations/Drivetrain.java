@@ -1,5 +1,8 @@
 package org.firstinspires.ftc.teamcode.auto.support.enumerations;
 
+/**
+ * Enumeration to define a type of drivetrain used
+ */
 public enum Drivetrain {
     /**
      * No drivetrain. Used as default.

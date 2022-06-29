@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.teamcode.CameraPipelines.TSEDetectionPipeline;
+import org.firstinspires.ftc.teamcode.auto.support.enumerations.Drivetrain;
 import org.firstinspires.ftc.teamcode.auto.support.enumerations.DrivetrainSymmetry;
 import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
@@ -56,6 +57,8 @@ abstract public class Robot extends BotContainer{
      */
     protected final void initialize(){
         // Null check - if not null then build the path sequence
+        createPathSequence();
+
         if(getPathSequence() != null)
             getPathSequence().buildAll();
 
@@ -67,6 +70,24 @@ abstract public class Robot extends BotContainer{
             telemetry.update();
         }
         while (!opModeIsActive());
+    }
+
+    /**
+     * Create the path sequence object given certain parameters.
+     * Postcondition: if there is something in ListOfPaths then it will be built.
+     */
+    private void createPathSequence(){
+        if(getListOfPaths() != null){
+            // Create the path sequence
+            PathSequence sequenceToFollow = new PathSequence(
+                    Drivetrain.DIFFY,                           // REPLACE WITH WHATEVER DRIVETRAIN YOU HAVE
+                    getListOfPaths(),                                // **DO NOT REPLACE
+                    leftFront, leftBack, rightFront, rightBack, // REPLACE WITH YOUR MOTOR VARIABLES
+                    wheelR);                                    // **DO NOT REPLACE
+
+            // Add the path sequence to the robot
+            setPathSequence(sequenceToFollow);
+        }
     }
 
     /**

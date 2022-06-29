@@ -8,6 +8,7 @@ import org.firstinspires.ftc.teamcode.auto.support.enumerations.PathType;
 /**
  * Parent class for paths that solely are composed of time to wheel velocity functions.
  * Essentially acts as a piecewise function over time for both the left and right velocity.
+ *
  */
 public abstract class Path {
     /**

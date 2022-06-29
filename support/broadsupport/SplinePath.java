@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * created by
  * @author Tiernan Lindauer
  * for FTC team 7797.
+ *
  */
 public class SplinePath extends Path {
     // Variables to characterize the spline

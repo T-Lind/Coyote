@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
  * Basic class to make a simple time keeping object
+ *
  */
 public class Timer {
     /**

@@ -12,6 +12,7 @@ import org.firstinspires.ftc.teamcode.auto.support.enumerations.PeripheralType;
  * Use this object in a runner like any other.
  *
  * @author Tiernan Lindauer
+ *
  */
 public class KalmanFilter {
 

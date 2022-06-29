@@ -11,6 +11,8 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
+import java.util.ArrayList;
+
 
 /**
  * Class to slim down autonomous programs for four motor drivetrains and execute markers.
@@ -41,6 +43,11 @@ abstract public class BotContainer extends LinearOpMode{
    protected OpenCvCamera camera;
 
    /**
+    * A list of paths to reduce user code
+    */
+   private ArrayList<Path> listOfPaths = new ArrayList<>();
+
+   /**
     * Assign the path sequence to this LinearOpMode
     * @param pathSequence is the set of basic robot instructions to move along
     *                     (final linear wheel velocities).
@@ -60,6 +67,18 @@ abstract public class BotContainer extends LinearOpMode{
     */
    protected final PathSequence getPathSequence(){
       return pathSequence;
+   }
+
+   protected final void addPath(Path path){
+      listOfPaths.add(path);
+   }
+
+   /**
+    * Get the list of paths
+    * @return the ArrayList of paths
+    */
+   protected final ArrayList<Path> getListOfPaths(){
+      return listOfPaths;
    }
 
    /**

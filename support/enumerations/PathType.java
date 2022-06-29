@@ -1,5 +1,8 @@
 package org.firstinspires.ftc.teamcode.auto.support.enumerations;
 
+/**
+ * Define what type of path is being used
+ */
 public enum PathType {
     /**
      * The path to move in a line.
@@ -14,5 +17,8 @@ public enum PathType {
      */
     SPLINE,
 
+    /**
+     * Follow a spline at a constant heading (only used for differential swerve)
+     */
     CONSTANTSPLINE
 }

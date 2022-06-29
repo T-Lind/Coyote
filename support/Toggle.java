@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.auto.support;
 
 /**
  * Toggle Object - code to detect button presses and update a toggle variable in a fast loop
+ *
  * **/
 public class Toggle {
     /**
