@@ -13,7 +13,6 @@ import java.util.ArrayList;
 /**
  * Wrapper for all the different types of Path Sequences, works closely with PathSequenceFather
  * where the path sequences inherit common data.
- *
  */
 public class PathSequence {
     // Items necessary for each path - trajectory to follow and the time of drivetrain

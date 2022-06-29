@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
+import org.firstinspires.ftc.teamcode.CameraPipelines.ImagePipeline;
 import org.firstinspires.ftc.teamcode.CameraPipelines.TSEDetectionPipeline;
 import org.firstinspires.ftc.teamcode.auto.support.enumerations.Drivetrain;
 import org.firstinspires.ftc.teamcode.auto.support.enumerations.DrivetrainSymmetry;
@@ -19,36 +20,26 @@ abstract public class Robot extends BotContainer{
     protected DcMotorEx leftFront, leftBack, rightFront, rightBack;
 
     /**
-     * wheelR is the radius of the wheel and should be replaced with your robots driven wheel radius
-     */
-    protected final double wheelR = 0.03715;
-
-
-    /**
      * pipeline here is of type TSEDetectionPipeline, replace this with whatever pipeline you've made!
      */
-    private TSEDetectionPipeline pipeline;
+    private final ImagePipeline pipeline = new ImagePipeline();;
 
+    /**
+     * Define whether the drivetrain is symmetrical or not - if both sides of the robot are powered
+     * positively and the robot moves forward then the robot is symmetrical, if it turns then it is
+     * asymmetrical.
+     */
     private final DrivetrainSymmetry symmetryState = DrivetrainSymmetry.SYMMETRICAL;
+
+    /**
+     * wheelR is the radius of the wheel and should be replaced with your robots driven wheel radius
+     */
+    private final double wheelR = 0.03715;
+
     /**
      * trackWidth is the distance between the wheels of the robot (viewing down the center of the robot), replace with your track width
      */
     private final double trackWidth = 0.295;
-
-    /**
-     * Initialize all and build the path sequence if not null, relay a successful initialization
-     * through the telemetry.
-     */
-    protected final void initializeHardware(){
-        // Initialize the drivetrain symmetry
-        Path.setSymmetryState(symmetryState);
-        Path.setTrackWidth(trackWidth);
-
-        // Initialize motors and camera
-        initMotors();
-        initCamera();
-
-    }
 
     /**
      * Run code while the init button has been pressed
@@ -56,7 +47,6 @@ abstract public class Robot extends BotContainer{
      * Postcondition: the initialization phase has been successful.
      */
     protected final void initialize(){
-        // Null check - if not null then build the path sequence
         createPathSequence();
 
         if(getPathSequence() != null)
@@ -71,6 +61,7 @@ abstract public class Robot extends BotContainer{
         }
         while (!opModeIsActive());
     }
+
 
     /**
      * Create the path sequence object given certain parameters.
@@ -129,8 +120,6 @@ abstract public class Robot extends BotContainer{
         camera = OpenCvCameraFactory.getInstance().createWebcam(webcameraName, cameraMonitorViewId);
 
 
-        // instantiate and add the pipeline
-        pipeline = new TSEDetectionPipeline();
         camera.setPipeline(pipeline);
 
         // Start the camera stream or throws an error
@@ -145,5 +134,21 @@ abstract public class Robot extends BotContainer{
                 throw new RuntimeException("Error in camera initialization! Error code "+errorCode);
             }
         });
+    }
+
+    /**
+     * Initialize all and build the path sequence if not null, relay a successful initialization
+     * through the telemetry.
+     * Should NOT be modified.
+     */
+    protected final void initializeHardware(){
+        // Initialize the drivetrain symmetry
+        Path.setSymmetryState(symmetryState);
+        Path.setTrackWidth(trackWidth);
+
+        // Initialize motors and camera
+        initMotors();
+        initCamera();
+
     }
 }

@@ -15,7 +15,7 @@ import org.firstinspires.ftc.teamcode.auto.support.enumerations.PeripheralType;
 
 /**
  * Program to take linear velocities from each wheel and translate
- * them into 2wd.
+ * them into 2wd
  * Created by
  * @author Tiernan Lindauer
  * for FTC team 7797.

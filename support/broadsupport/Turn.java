@@ -7,7 +7,6 @@ import org.firstinspires.ftc.teamcode.auto.support.enumerations.PathType;
  * Program to turn a specified angle.
  * @author Tiernan Lindauer
  * Uses the Line Class and cleverly overrides the left motor velocity.
- *
  */
 public class Turn extends Line{
 

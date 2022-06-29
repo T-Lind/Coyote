@@ -23,7 +23,6 @@ import java.util.ArrayList;
  * ---------------------------------
  * 
  * @author Tiernan Lindauer
- *
  */
 public class DiffyPathSequence extends PathSequenceFather {
     // Motor variables specific to a diffy swerve

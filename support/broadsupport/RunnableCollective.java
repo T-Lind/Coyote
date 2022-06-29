@@ -7,7 +7,6 @@ import java.util.Arrays;
 /**
  * A class for running the markers on different threads at the same time to run each marker.
  * You can create as many threads as you want!
- *
  */
 public class RunnableCollective implements Runnable{
     /**

@@ -5,7 +5,6 @@ import java.util.Arrays;
  * Supporting file to create a static array of markers.
  * @author Tiernan Lindauer
  * For team 7797 Victorian Voltage.
- *
  */
 public class MarkerList {
     /**

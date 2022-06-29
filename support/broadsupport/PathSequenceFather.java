@@ -2,9 +2,6 @@ package org.firstinspires.ftc.teamcode.auto.support.broadsupport;
 
 import java.util.ArrayList;
 
-/**
- * Class to make constructing individual path sequence objects easier. Holds all common data.
- */
 public abstract class PathSequenceFather {
     // Common variables and objects among all path sequences
     /**

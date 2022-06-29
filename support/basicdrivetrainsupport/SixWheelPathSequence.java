@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 /**
  * Program to take linear velocities from each wheel and translate
- * them into 6wd.
+ * them into 6wd
  * Created by
  * @author Tiernan Lindauer
  * for FTC team 7797.
