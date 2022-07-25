@@ -14,5 +14,13 @@ public enum PathType {
      */
     SPLINE,
 
-    CONSTANTSPLINE
+    /**
+     * Move in a spline but at a constant heading on a differential swerve
+     */
+    CONSTANTSPLINE,
+
+    /**
+     * Turn only differential swerve pods
+     */
+    PODTURN
 }

@@ -1,7 +1,5 @@
 package org.firstinspires.ftc.teamcode.auto.support.broadsupport;
 
-import org.firstinspires.ftc.teamcode.auto.support.enumerations.PeripheralType;
-
 /**
  * A Kalman Filter for 1D data.
  * It can be used for multiple dimensioned data, however a separate
@@ -48,44 +46,16 @@ public class KalmanFilter {
      */
     private double x = Double.NaN;
 
-    /*
-    R is process noise
-    Q is measurment noise
-    A is the state vector
-    B is the control vector
-    C is the measurement vector
-     */
-
     /**
-     * Default constructor.
-     * @param deviceCode corresponds to what the Kalman Filter is for to reduce code and code errors.
-     *                   When deviceCode is 0, it is for drivetrain motors in a line or spline
-     *                   When deviceCode is 1, it is for distance sensors (in CM)
-     *                   When deviceCode is 2, i is for drivetrain motors in a turn.
-     *                   Additional deviceCodes will be added here.
-     *                   This method is shared with the PIDController class.
+     * Kalman Filter for driving motors during pathing
      */
-    public KalmanFilter(PeripheralType deviceCode){
-        if(deviceCode == PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT){
-            this.R = 18;
-            this.Q = 6;
+    public KalmanFilter() {
+        this.R = Robot.R;
+        this.Q = Robot.Q;
 
-            this.C = 2.7;
-            this.B = 10;
-            this.A = 1.5;
-        }
-        else if(deviceCode == PeripheralType.DISTANCE_SENSOR){
-            this.R = 2;
-            this.Q = 10;
-        }
-        else if(deviceCode == PeripheralType.DRIVETRAIN_MOTOR_TURN){
-            this.R = 15;
-            this.Q = 30;
-
-            this.C = 2.4;
-            this.B = 4.9;
-            this.A = 2.1;
-        }
+        this.C = Robot.C;
+        this.B = Robot.B;
+        this.A = Robot.A;
     }
 
     /**

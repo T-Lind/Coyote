@@ -92,9 +92,7 @@ public abstract class Path {
      * Precondition:  the construction variable has been instantiated
      * Postcondition: the path is set to a built status
      */
-    public void build() {
-        construction = BuildStatus.BUILT;
-    }
+    public abstract void build();
 
     /**
      * Set the execute time - time it takes to follow this specific Path.

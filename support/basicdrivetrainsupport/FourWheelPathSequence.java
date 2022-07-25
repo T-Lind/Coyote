@@ -9,7 +9,6 @@ import org.firstinspires.ftc.teamcode.auto.support.broadsupport.KalmanFilter;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.Path;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.PIDController;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.PathSequenceFather;
-import org.firstinspires.ftc.teamcode.auto.support.enumerations.PeripheralType;
 
 import java.util.ArrayList;
 
@@ -76,17 +75,17 @@ public class FourWheelPathSequence extends PathSequenceFather {
                 p.build();
 
             // Create kalman filter and PID objects
-            KalmanFilter kLeft1 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidLeft1 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kLeft1 = new KalmanFilter();
+            PIDController pidLeft1 = new PIDController();
 
-            KalmanFilter kLeft2 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidLeft2 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kLeft2 = new KalmanFilter();
+            PIDController pidLeft2 = new PIDController();
 
-            KalmanFilter kRight1 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidRight1 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kRight1 = new KalmanFilter();
+            PIDController pidRight1 = new PIDController();
 
-            KalmanFilter kRight2 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidRight2 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kRight2 = new KalmanFilter();
+            PIDController pidRight2 = new PIDController();
 
             double offset = t.milliseconds();
 

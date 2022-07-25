@@ -117,6 +117,9 @@ public class RunnableCollective implements Runnable{
         // Look and start the threads if the time is right and they have not been started before
         while(!stopMarkers)
             for(int i=0;i<childThreadList.length;i++){
+                // Can only start the thread if the thread has no tbeen started already,
+                // it is past the appropriate time, and the thread is marked to be activated
+                // in the threadStates array
                 if(markerList.getTime(i) < markerTime.milliseconds()/1000 && !threadStates[i] && !childThreadList[i].isAlive()){
                     childThreadList[i].start();
                     setThreadComplete(i);

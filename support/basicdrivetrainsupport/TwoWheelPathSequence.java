@@ -11,7 +11,6 @@ import org.firstinspires.ftc.teamcode.auto.support.broadsupport.Path;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.PIDController;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.PathSequenceFather;
 import org.firstinspires.ftc.teamcode.auto.support.enumerations.PathType;
-import org.firstinspires.ftc.teamcode.auto.support.enumerations.PeripheralType;
 
 /**
  * Program to take linear velocities from each wheel and translate
@@ -71,25 +70,25 @@ public class TwoWheelPathSequence extends PathSequenceFather{
             // Experimental bit here
             if(p.getType() == PathType.LINE || p.getType() == PathType.SPLINE){
 
-                k3 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-                pid3 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+                k3 = new KalmanFilter();
+                pid3 = new PIDController();
 
-                k4 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-                pid4 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+                k4 = new KalmanFilter();
+                pid4 = new PIDController();
             }
             else if(p.getType() == PathType.TURN){
-                k3 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_TURN);
-                pid3 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_TURN);
+                k3 = new KalmanFilter();
+                pid3 = new PIDController();
 
-                k4 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_TURN);
-                pid4 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_TURN);
+                k4 = new KalmanFilter();
+                pid4 = new PIDController();
             }
             else{
-                k3 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-                pid3 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+                k3 = new KalmanFilter();
+                pid3 = new PIDController();
 
-                k4 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-                pid4 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+                k4 = new KalmanFilter();
+                pid4 = new PIDController();
             }
 
             double offset = t.milliseconds();

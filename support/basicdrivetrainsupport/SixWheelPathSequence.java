@@ -9,7 +9,6 @@ import org.firstinspires.ftc.teamcode.auto.support.broadsupport.KalmanFilter;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.Path;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.PIDController;
 import org.firstinspires.ftc.teamcode.auto.support.broadsupport.PathSequenceFather;
-import org.firstinspires.ftc.teamcode.auto.support.enumerations.PeripheralType;
 
 import java.util.ArrayList;
 
@@ -87,23 +86,23 @@ public class SixWheelPathSequence extends PathSequenceFather {
             if(!p.getBuilt())
                 p.build();
 
-            KalmanFilter kLeft1 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidLeft1 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kLeft1 = new KalmanFilter();
+            PIDController pidLeft1 = new PIDController();
 
-            KalmanFilter kLeft2 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidLeft2 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kLeft2 = new KalmanFilter();
+            PIDController pidLeft2 = new PIDController();
 
-            KalmanFilter kLeft3 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidLeft3 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kLeft3 = new KalmanFilter();
+            PIDController pidLeft3 = new PIDController();
 
-            KalmanFilter kRight1 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidRight1 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kRight1 = new KalmanFilter();
+            PIDController pidRight1 = new PIDController();
 
-            KalmanFilter kRight2 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidRight2 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kRight2 = new KalmanFilter();
+            PIDController pidRight2 = new PIDController();
 
-            KalmanFilter kRight3 = new KalmanFilter(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
-            PIDController pidRight3 = new PIDController(PeripheralType.DRIVETRAIN_MOTOR_STRAIGHT);
+            KalmanFilter kRight3 = new KalmanFilter();
+            PIDController pidRight3 = new PIDController();
 
             double offset = t.milliseconds();
 
